@@ -1,9 +1,17 @@
- import style from './FirstPage.module.css'
-
+ import { useEffect } from 'react';
+import style from './FirstPage.module.css'
+ const tg = window.Telegram.WebApp;
  function FirstPage() {
+useEffect(()=>{
+    tg.ready()
+},[])
+
+    const onClose = () => {
+        tg.close()
+    }
     return (
         <div >
-         <p>hi</p>
+        <button>Закрыть</button>
         </div>
     )
 }
